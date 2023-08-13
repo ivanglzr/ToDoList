@@ -14,6 +14,10 @@ addTaskBtn.addEventListener("click", ()=>{
   
   let name = prompt("Cual es el nombre")
   
+  if (name.length < 2) {
+    return alert("El nombre no es valido")
+  }
+
   let taskContainer = document.createElement("DIV")
   taskContainer.classList.add("task")
   
@@ -55,13 +59,12 @@ addTaskBtn.addEventListener("click", ()=>{
     
     elements--
   })
-  
+
   taskContainer.appendChild(taskTitle)
   taskContainer.appendChild(checkBtn)
   taskContainer.appendChild(deleteBtn)
   
   container.appendChild(taskContainer)
-  
   
   tasksCount++
   txtTasksCompleted.innerHTML = `Quedan ${tasksCount} tareas`
